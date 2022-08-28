@@ -52,7 +52,7 @@ const userSchema = new Schema(
             },
             custom_permissions: {
                 custom_permission_1: {
-                    type: Boolean,
+                    type: Boolean, 
                     default: false
                 },
                 custom_permission_2: {
