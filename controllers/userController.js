@@ -10,7 +10,7 @@ const getSingleUser = (req, res) => {
     const { id } = req.params
     const mongoId = mongoose.Types.ObjectId(id.trim())
 
-    User.findOne({ _id: mongoId }).then(result => res.status(200).json(result)).catch(err => console.log(err, ' aq?'))
+    User.findOne({ _id: mongoId }).then(result => res.status(200).json(result)).catch(err => console.log(err))
 }
 
 const createUser = async (req, res) => {

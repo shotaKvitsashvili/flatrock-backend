@@ -21,11 +21,12 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopol
     .catch(err => console.error(err));
 
 
-app.use(bodyParser.urlencoded({ extended: true, limit: '20mb', parameterLimit: 100000, }))
+app.use(bodyParser.urlencoded({ extended: true, limit: '1mb', parameterLimit: 100000, }))
 app.use(express.json({ limit: '1mb' }))
+app.use(express.static('static'))
 
-let root = path.join(__dirname, '..', 'build/')
-app.use(express.static(root))
+// let root = path.join(__dirname, '..', 'build/')
+// app.use(express.static(root))
 
 app.use(cors())
 app.use('/api', routes)

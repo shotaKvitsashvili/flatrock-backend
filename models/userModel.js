@@ -19,7 +19,8 @@ const userSchema = new Schema(
             type: String || ''
         },
         img: {
-            type: String || ''
+            type: String || '',
+            index: true
         },
         superAdmin: {
             type: Boolean,
@@ -52,7 +53,7 @@ const userSchema = new Schema(
             },
             custom_permissions: {
                 custom_permission_1: {
-                    type: Boolean, 
+                    type: Boolean,
                     default: false
                 },
                 custom_permission_2: {
